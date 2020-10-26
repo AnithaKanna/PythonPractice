@@ -1,0 +1,68 @@
+Count evens:
+def count_evens(nums):
+  even = 0
+  for i in range(len(nums)):
+    if nums[i]%2 == 0:
+     even += 1
+  return even
+---------------------------------------------
+Big diff:
+def big_diff(nums):
+  return max(nums) - min(nums)
+  
+def big_diff(nums): 
+  max = 0
+  min = nums[-1]
+  for i in range(len(nums)):
+    if max < nums[i]:
+      max = nums[i]
+    if nums[i] < min:
+      min = nums[i]
+  return (max-min)
+---------------------------------------------
+Centered average:
+def centered_average(nums):
+  maxi = max(nums)
+  mini = min(nums)
+  nums.remove(maxi)
+  nums.remove(mini)
+  avg = sum(nums)/len(nums)
+  return avg
+---------------------------------------------
+Sum13:
+
+ sum = 0
+  skip = False
+  for i in nums:
+    if i == 13:
+      skip = True
+      continue
+    if skip:
+      skip = False
+      continue
+    sum += i
+  return sum
+
+---------------------------------------------
+Sum67:
+def sum67(nums):
+  result = 0
+  startadding = True
+  for val in nums:
+    if val == 6:
+      startadding = False
+    if startadding:
+      result +=val
+    if val == 7:
+      startadding = True
+  return result
+---------------------------------------------
+Has22:
+def has22(nums):
+  for i in range(len(nums)-1):
+    if nums[i] == 2 and nums[i+1] == 2:
+      return True
+    elif nums[-1] == 2 and nums[-2] == 2:
+      return True
+    
+  return False
